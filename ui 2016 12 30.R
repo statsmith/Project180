@@ -174,14 +174,9 @@ myBody <- dashboardBody(
                        
                        shinyjs::hidden(
                                div(id="divTextAnalysis", style="text-align: center;",
-                                   tags$br(),tags$br(),
-                                   box( width = 12,
-                                        tags$p("Don't take results from this too seriously!  This is a beta version implementation based on limited data..."),
-                                           textInput(inputId="myText", label = "Enter Your Text Here..."),
-                                           tags$br(),tags$br(),
-                                           plotOutput("myPredict", height = 100)
-                                   )
-
+                                   tags$br(),tags$br(),tags$br(),tags$br(),
+                                   tags$p("This will be a tool that allows users to enter text and get an NVC rating"),
+                                   tags$p("Coming Soon...")
                                )
                        ),
                        

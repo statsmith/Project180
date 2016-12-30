@@ -9,8 +9,6 @@
         library(ggplot2)
         library(DT)
         library(leaflet)
-        library(tm)
-        library(caret)
 
 
 # Constants ====
@@ -21,7 +19,7 @@
 
 # Functions ====
 
-        source("fPredict.R")
+        # source("Module Quiz.R")
 
 # Data ====
 
@@ -337,17 +335,8 @@ shinyServer(function(input, output, session){
                 p
 
         })
+       
         
-        output$myPredict <- renderPlot({
-                
-                req(input$myText)
-                
-                myPredict <- fPredict(input$myText)
-                myPredict[[1]]
-                
-        })
-                
-                
 #         output$test <- renderPrint({
 #                 print(input$myMap_click)
 #         })
