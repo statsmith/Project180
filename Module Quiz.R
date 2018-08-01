@@ -15,6 +15,8 @@ quizInput <- function(id, buttonLabel1, buttonLabel0, buttonLabelNext) {
                
                 inlineCSS(list(.Correct = "color: #1b9e77", .Oops = "color: #d95f02")),
                 
+                # inlineCSS(list(.Correct = "color: #79e0c1", .Oops = "color: #f9ba89")),
+                
                 column(width=6,
                        uiOutput(ns("myText")),
                        tags$br(),
@@ -116,9 +118,12 @@ quiz <- function(input, output, session, df, myCategory) {
                 dfPercent <- data.frame(Percent = myPercent, Result = 0)
                 
                 p <- ggplot(data=dfPercent, aes(x=Percent, y=Result))
-                p <- p + geom_segment(aes(x=0, xend=Percent, y=Result, yend=Result), col="#1b9e77", size=5)
-                p <- p + geom_segment(aes(x=Percent, xend=100, y=Result, yend=Result), col="#d95f02", size=5)
-                p <- p + geom_text(aes(x=5, y=Result), label=paste0(myCorrect,"/", myCorrect + myOops, " correct"), hjust=0, col="ghostwhite")
+                
+                # inlineCSS(list(.Correct = "color: #79e0c1", .Oops = "color: #f9ba89")),
+                
+                p <- p + geom_segment(aes(x=0, xend=Percent, y=Result, yend=Result), col="#b3e2cd", size=5)
+                p <- p + geom_segment(aes(x=Percent, xend=100, y=Result, yend=Result), col="#fdcdac", size=5)
+                p <- p + geom_text(aes(x=5, y=Result), label=paste0(myCorrect,"/", myCorrect + myOops, " correct"), hjust=0, col="grey20")
                 p <- p + theme_minimal() + xlab("") + ylab("")
                 p <- p + theme(axis.text.x=element_blank(),
                                axis.ticks.x=element_blank(),
